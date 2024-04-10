@@ -118,15 +118,12 @@ export const toRoman = (num: number): string => {
     for (let i = length + 1; length > 0; length--) {
         const alg = Number(algsStr[i-length-1])
         let numberOfOnes = alg
-        if (alg === 9) {
-            romanNumber = `${romanNumber}${romanByDecimalLength[length][9]}`
+        if (alg === 9 || alg === 4) {
+            romanNumber = `${romanNumber}${romanByDecimalLength[length][alg]}`
             numberOfOnes = 0
         } else if (alg > 4) {
             romanNumber = `${romanNumber}${romanByDecimalLength[length][5]}`
             numberOfOnes = alg - 5
-        } else if (alg === 4) {
-            romanNumber = `${romanNumber}${romanByDecimalLength[length][4]}`
-            numberOfOnes = 0
         }
 
         for (let i = 0; i < numberOfOnes; i++) {
