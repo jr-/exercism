@@ -69,8 +69,8 @@ export function decode(encoded: string) : string {
     return decoded
 }
 
-function isCharNumber(c) {
-    return c >= '0' && c <= '9';
+function isCharNumber(c: string) : boolean {
+    return c >= '0' && c <= '9'
   }
 
 console.log(decode('XYZ'))
